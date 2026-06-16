@@ -1,0 +1,32 @@
+# Smart Parking System
+
+# Accept parking duration from user
+hours = int(input("Enter parking duration in hours: "))
+
+# Check invalid input
+if hours <= 0:
+    print("Invalid Input")
+
+# Check parking duration greater than 24
+elif hours > 24:
+    print("Invalid Parking Duration")
+
+# First 2 hours
+elif hours <= 2:
+    amount = 100
+    print("Total Parking Amount: ₹", amount)
+
+# Next 3 hours (3 to 5 hours)
+elif hours <= 5:
+    amount = 100 + (hours - 2) * 50
+    print("Total Parking Amount: ₹", amount)
+
+# Next 7 hours (6 to 12 hours)
+elif hours <= 12:
+    amount = 100 + (3 * 50) + (hours - 5) * 30
+    print("Total Parking Amount: ₹", amount)
+
+# Above 12 hours up to 24 hours
+else:
+    amount = 500
+    print("Total Parking Amount: ₹", amount)
